@@ -1,0 +1,30 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "regions": ["cdg1"],
+  "functions": {
+    "app/api/analyze/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/resolve/route.ts": {
+      "maxDuration": 30
+    },
+    "app/api/stream/route.ts": {
+      "maxDuration": 30
+    },
+    "app/api/proxy-download/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/youtube-download/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/streaming-download/route.ts": {
+      "maxDuration": 60
+    },
+    "app/api/streaming-download/status/route.ts": {
+      "maxDuration": 10
+    }
+  }
+}
