@@ -38,6 +38,6 @@ const m3u8 = decoded?.match(/https?:\/\/[^"'\s]+\.m3u8[^"'\s]*/i)?.[0]
 console.log('Extracted:', m3u8?.slice(0, 100))
 
 if (m3u8) {
-  const proxyUrl = `http://localhost:3000/api/stream?url=${encodeURIComponent(m3u8)}&referer=${encodeURIComponent(embedUrl)}`
+  const proxyUrl = `https://xfile-production.up.railway.app/api/stream?url=${encodeURIComponent(m3u8)}&referer=${encodeURIComponent(embedUrl)}`
   console.log('Proxy URL ready (needs dev server):', proxyUrl.slice(0, 80))
 }
