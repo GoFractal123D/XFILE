@@ -33,9 +33,7 @@ export async function POST(req: Request) {
       typeof body.sourceLabel === 'string' ? body.sourceLabel : 'Source'
 
     const stream = await resolveEmbedUrl(embedUrl, pageReferer)
-    const origin = process.env.NEXT_PUBLIC_SITE_URL
-      ? new URL(process.env.NEXT_PUBLIC_SITE_URL).origin
-      : new URL(req.url).origin
+    const origin = new URL(req.url).origin
     const proxyReferer = embedUrl
 
     if (stream.kind === 'hls') {
